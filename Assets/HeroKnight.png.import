@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HeroKnight.png-7998492188b849002c52b18b9d9134f0.stex"
+path="res://.import/HeroKnight.png-c80703662b06c12ee62f114a88071b09.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://HeroKnight.png"
-dest_files=[ "res://.import/HeroKnight.png-7998492188b849002c52b18b9d9134f0.stex" ]
+source_file="res://Assets/HeroKnight.png"
+dest_files=[ "res://.import/HeroKnight.png-c80703662b06c12ee62f114a88071b09.stex" ]
 
 [params]
 
