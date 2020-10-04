@@ -22,6 +22,8 @@ func keyboard_input(delta):
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	if Input.is_action_just_pressed("ui_up"):
 		input_vector.y = -100.0
+	if velocity.y != 0:
+		animation_state.travel("Jump")
 	input_vector = input_vector.normalized()
 	print(input_vector)
 	if input_vector != Vector2.ZERO:
@@ -31,11 +33,9 @@ func keyboard_input(delta):
 		elif input_vector.x < 0:
 			animation_state.travel("Run")
 			scale.x = -initial_scale.x * sign(scale.y)
-		if velocity.y < 0:
-			animation_state.travel("Jump")
 		#velocity = velocity.move_toward(input_vector * max_speed, acceleration * delta)
 		
-		velocity = input_vector * max_speed
+		#velocity = input_vector * max_speed
 	else:
 		animation_state.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
