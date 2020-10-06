@@ -84,19 +84,17 @@ tracks/0/keys = {
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Attack_1"
 
-[sub_resource type="AnimationNodeAnimation" id=22]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Attack_2"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Jump"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Run"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=10]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
@@ -116,40 +114,44 @@ animation = "Run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=23]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=24]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
-
-[sub_resource type="AnimationNodeStateMachine" id=20]
+[sub_resource type="AnimationNodeStateMachine" id=25]
 states/Attack_1/node = SubResource( 6 )
 states/Attack_1/position = Vector2( 237, 125 )
-states/Attack_2/node = SubResource( 22 )
+states/Attack_2/node = SubResource( 7 )
 states/Attack_2/position = Vector2( 246, 208 )
-states/Idle/node = SubResource( 7 )
+states/Idle/node = SubResource( 8 )
 states/Idle/position = Vector2( 237, 31 )
-states/Jump/node = SubResource( 8 )
+states/Jump/node = SubResource( 9 )
 states/Jump/position = Vector2( 579, 25 )
-states/Run/node = SubResource( 9 )
+states/Run/node = SubResource( 10 )
 states/Run/position = Vector2( 579, 140 )
-transitions = [ "Idle", "Run", SubResource( 10 ), "Run", "Idle", SubResource( 11 ), "Idle", "Attack_1", SubResource( 12 ), "Attack_1", "Idle", SubResource( 13 ), "Attack_1", "Run", SubResource( 14 ), "Run", "Attack_1", SubResource( 15 ), "Run", "Jump", SubResource( 16 ), "Jump", "Idle", SubResource( 17 ), "Idle", "Jump", SubResource( 18 ), "Attack_1", "Jump", SubResource( 19 ), "Attack_1", "Attack_2", SubResource( 23 ), "Attack_2", "Idle", SubResource( 24 ), "Attack_2", "Jump", SubResource( 25 ), "Attack_2", "Run", SubResource( 26 ) ]
+transitions = [ "Idle", "Run", SubResource( 11 ), "Run", "Idle", SubResource( 12 ), "Idle", "Attack_1", SubResource( 13 ), "Attack_1", "Idle", SubResource( 14 ), "Attack_1", "Run", SubResource( 15 ), "Run", "Attack_1", SubResource( 16 ), "Run", "Jump", SubResource( 17 ), "Jump", "Idle", SubResource( 18 ), "Idle", "Jump", SubResource( 19 ), "Attack_1", "Jump", SubResource( 20 ), "Attack_1", "Attack_2", SubResource( 21 ), "Attack_2", "Idle", SubResource( 22 ), "Attack_2", "Jump", SubResource( 23 ), "Attack_2", "Run", SubResource( 24 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -235, 23.9581 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=21]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=26]
 
 [node name="Character" type="KinematicBody2D"]
 collision_mask = 8
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3, -6.25 )
+scale = Vector2( 1.06, 1.22727 )
 texture = ExtResource( 1 )
 vframes = 9
 hframes = 10
-frame = 29
+frame = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack_1 = SubResource( 1 )
@@ -159,9 +161,10 @@ anims/Jump = SubResource( 4 )
 anims/Run = SubResource( 5 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 20 )
+tree_root = SubResource( 25 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 21 )
+active = true
+parameters/playback = SubResource( 26 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 9.53674e-07, -8 )
