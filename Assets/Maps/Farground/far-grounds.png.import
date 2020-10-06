@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/clouds.png-59c59576b3bcb47bd83f0db8da8c0730.stex"
+path="res://.import/far-grounds.png-870686cbc213aaa4df412c55b926427f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/clouds.png"
-dest_files=[ "res://.import/clouds.png-59c59576b3bcb47bd83f0db8da8c0730.stex" ]
+source_file="res://Assets/Maps/Farground/far-grounds.png"
+dest_files=[ "res://.import/far-grounds.png-870686cbc213aaa4df412c55b926427f.stex" ]
 
 [params]
 

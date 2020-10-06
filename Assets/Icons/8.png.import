@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/magic-cliffs-PREVIEWx1.png-08b4a8d7b98c12b02fadf7435fecbd3f.stex"
+path="res://.import/8.png-87f26f158c0c5848c7ef062c002670ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/magic-cliffs-PREVIEWx1.png"
-dest_files=[ "res://.import/magic-cliffs-PREVIEWx1.png-08b4a8d7b98c12b02fadf7435fecbd3f.stex" ]
+source_file="res://Assets/Icons/8.png"
+dest_files=[ "res://.import/8.png-87f26f158c0c5848c7ef062c002670ab.stex" ]
 
 [params]
 

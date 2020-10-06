@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Floor.png-2014aba4533b5b820b53643445fc62e4.stex"
+path="res://.import/sky.png-c326ed37ec592b23d1b0cd8c680eb2b2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Floor.png"
-dest_files=[ "res://.import/Floor.png-2014aba4533b5b820b53643445fc62e4.stex" ]
+source_file="res://Assets/Maps/Farground/sky.png"
+dest_files=[ "res://.import/sky.png-c326ed37ec592b23d1b0cd8c680eb2b2.stex" ]
 
 [params]
 

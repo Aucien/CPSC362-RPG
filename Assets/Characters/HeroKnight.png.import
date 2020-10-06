@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/far-grounds.png-0f281ba019d9cb8c45b2cc46740b80a2.stex"
+path="res://.import/HeroKnight.png-f85ee99caa532023351a99323219aadb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/far-grounds.png"
-dest_files=[ "res://.import/far-grounds.png-0f281ba019d9cb8c45b2cc46740b80a2.stex" ]
+source_file="res://Assets/Characters/HeroKnight.png"
+dest_files=[ "res://.import/HeroKnight.png-f85ee99caa532023351a99323219aadb.stex" ]
 
 [params]
 
