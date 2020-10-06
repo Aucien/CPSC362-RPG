@@ -35,7 +35,7 @@ func keyboard_input(delta):
 			scale.x = -initial_scale.x * sign(scale.y)
 		#velocity = velocity.move_toward(input_vector * max_speed, acceleration * delta)
 		
-		#velocity = input_vector * max_speed
+		velocity = input_vector * max_speed
 	else:
 		animation_state.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
