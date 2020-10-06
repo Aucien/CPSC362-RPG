@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/HeroKnight_Block Idle_0.png-046d8e0ed589f6e287f83b2a7977b23a.stex"
+path="res://.import/sea.png-60f84914e4af4673d6839f5b896bb4fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/HeroKnight_Block Idle_0.png"
-dest_files=[ "res://.import/HeroKnight_Block Idle_0.png-046d8e0ed589f6e287f83b2a7977b23a.stex" ]
+source_file="res://Assets/sea.png"
+dest_files=[ "res://.import/sea.png-60f84914e4af4673d6839f5b896bb4fd.stex" ]
 
 [params]
 
