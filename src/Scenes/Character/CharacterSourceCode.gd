@@ -4,7 +4,7 @@ const MAX_SPEED = 200
 const GRAVITY = 15
 const FRICTION = 800
 const ACCELERATION = 800
-const JUMP_PW= -800
+const JUMP_PW= -350
 
 onready var initial_scale = scale
 var velocity = Vector2.ZERO
