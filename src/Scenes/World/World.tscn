@@ -682,7 +682,7 @@ points = PoolVector2Array( 1.75703, 11.3273, 4.34113, 10.6813, 10.1553, 7.45117,
 } ]
 36/z_index = 0
 
-[node name="World" type="Node2D"]
+[node name="World" type="YSort"]
 
 [node name="Character" type="YSort" parent="."]
 
