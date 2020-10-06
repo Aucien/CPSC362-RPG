@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sky.png-5ec5e10dfc6f547a0e51c441f3354a67.stex"
+path="res://.import/magic-cliffs-PREVIEWx1.png-08b4a8d7b98c12b02fadf7435fecbd3f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sky.png"
-dest_files=[ "res://.import/sky.png-5ec5e10dfc6f547a0e51c441f3354a67.stex" ]
+source_file="res://Assets/magic-cliffs-PREVIEWx1.png"
+dest_files=[ "res://.import/magic-cliffs-PREVIEWx1.png-08b4a8d7b98c12b02fadf7435fecbd3f.stex" ]
 
 [params]
 
