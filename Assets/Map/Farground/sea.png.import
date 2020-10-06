@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/magic-cliffs-PREVIEWx1.png-08b4a8d7b98c12b02fadf7435fecbd3f.stex"
+path="res://.import/sea.png-0875e3f114ebc8f2a2b54b061d436e89.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/magic-cliffs-PREVIEWx1.png"
-dest_files=[ "res://.import/magic-cliffs-PREVIEWx1.png-08b4a8d7b98c12b02fadf7435fecbd3f.stex" ]
+source_file="res://Assets/Map/Farground/sea.png"
+dest_files=[ "res://.import/sea.png-0875e3f114ebc8f2a2b54b061d436e89.stex" ]
 
 [params]
 

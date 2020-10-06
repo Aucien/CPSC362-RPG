@@ -1,0 +1,198 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Assets/Characters/HeroKnight.png" type="Texture" id=1]
+[ext_resource path="res://src/Scenes/Character/CharacterSourceCode.gd" type="Script" id=2]
+
+
+[sub_resource type="Animation" id=1]
+resource_name = "Attack_1"
+length = 0.65
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 19, 20, 21, 21, 22 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Attack_2"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 24, 25, 26, 27, 28, 29 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "Fall"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 41, 42, 43, 44 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.24
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 38, 39, 40 ]
+}
+
+[sub_resource type="Animation" id=5]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "Attack_1"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Attack_2"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
+animation = "Fall"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "Idle"
+
+[sub_resource type="AnimationNodeAnimation" id=9]
+animation = "Jump"
+
+[sub_resource type="AnimationNodeAnimation" id=10]
+animation = "Run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=23]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=24]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=29]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=30]
+
+[sub_resource type="AnimationNodeStateMachine" id=25]
+states/Attack_1/node = SubResource( 6 )
+states/Attack_1/position = Vector2( 237, 125 )
+states/Attack_2/node = SubResource( 7 )
+states/Attack_2/position = Vector2( 246, 208 )
+states/Fall/node = SubResource( 28 )
+states/Fall/position = Vector2( 451, 220.958 )
+states/Idle/node = SubResource( 8 )
+states/Idle/position = Vector2( 237, 31 )
+states/Jump/node = SubResource( 9 )
+states/Jump/position = Vector2( 579, 25 )
+states/Run/node = SubResource( 10 )
+states/Run/position = Vector2( 579, 140 )
+transitions = [ "Idle", "Run", SubResource( 11 ), "Run", "Idle", SubResource( 12 ), "Idle", "Attack_1", SubResource( 13 ), "Attack_1", "Idle", SubResource( 14 ), "Attack_1", "Run", SubResource( 15 ), "Run", "Attack_1", SubResource( 16 ), "Run", "Jump", SubResource( 17 ), "Jump", "Idle", SubResource( 18 ), "Idle", "Jump", SubResource( 19 ), "Attack_1", "Jump", SubResource( 20 ), "Attack_1", "Attack_2", SubResource( 21 ), "Attack_2", "Idle", SubResource( 22 ), "Attack_2", "Jump", SubResource( 23 ), "Attack_2", "Run", SubResource( 24 ), "Idle", "Fall", SubResource( 29 ), "Fall", "Idle", SubResource( 30 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -235, 23.9581 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=26]
+
+[node name="HeroKnight" type="KinematicBody2D"]
+collision_mask = 8
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 3, -6.25 )
+scale = Vector2( 1.06, 1.22727 )
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 10
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Attack_1 = SubResource( 1 )
+anims/Attack_2 = SubResource( 2 )
+anims/Fall = SubResource( 27 )
+anims/Idle = SubResource( 3 )
+anims/Jump = SubResource( 4 )
+anims/Run = SubResource( 5 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 25 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 26 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2( 9.53674e-07, -8 )
+scale = Vector2( 1.22917, 1.4375 )
+polygon = PoolVector2Array( -8, 16, 8, 16, 8, 24, 8, 24, -16, 24, -16, 16 )
