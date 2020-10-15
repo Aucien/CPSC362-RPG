@@ -5,16 +5,36 @@ const GRAVITY = 20
 const ACCELERATION = 80
 const JUMP_PW= -400
 
+var state = MOVE
 var velocity = Vector2.ZERO
 onready var initial_scale = scale
 onready var animationPlayer = $AnimationPlayer
 onready var animationState = $AnimationTree.get("parameters/playback")
 
+enum {
+	MOVE,
+	ATTACK_1,
+	ATTACK_2,
+	ATTACK_3
+	DEATH,
+	BLOCK
+}
+
 func _ready():
 	pass
 
 func _physics_process(delta):
-	move_state(delta)
+	match state:
+		MOVE:
+			move_state(delta)
+		ATTACK_1:
+			attack_state1(delta)
+		ATTACK_2:
+			attack_state2(delta)
+		ATTACK_3:
+			attack_state3(delta)
+		BLOCK:
+			pass
 
 func move_state(delta):
 	var input_vector = Vector2.ZERO
@@ -28,7 +48,7 @@ func move_state(delta):
 			velocity.x = min(velocity.x + ACCELERATION, MAX_SPEED)
 			scale.x = initial_scale.x * sign(scale.y)
 		elif input_vector.x < 0:
-			velocity.x = max(velocity.x - ACCELERATION, -MAX_SPEED)
+			velocity.x = max(velocity.x - ACCELERATION, -MAX_SPEED) 
 			scale.x = -initial_scale.x * sign(scale.y)
 		animationState.travel("Run")
 	else:
@@ -41,13 +61,38 @@ func move_state(delta):
 		if Input.is_action_pressed("ui_accept"):
 			velocity.y = JUMP_PW
 		if on_ground == true:
-			velocity.x = lerp(velocity.x, 0 , 0.2)
+			velocity.x = lerp(velocity.x, 0 , 0.1)
 	else:
 		if velocity.y < 0:
 			animationState.travel("Jump")
 		else:
 			animationState.travel("Fall")
 		if on_ground == true:
-			velocity.x = lerp(velocity.x, 0 , 0.05)
+			velocity.x = lerp(velocity.x, 0 , 0.01)
 
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	if Input.is_action_just_pressed("attack1"):
+		state = ATTACK_1
+	if Input.is_action_just_pressed("attack2"):
+		state = ATTACK_2
+	if Input.is_action_just_pressed("attack3"):
+		state = ATTACK_3
+		
+func attack_state1(delta):
+	velocity = Vector2.ZERO
+	animationState.travel("Attack_1")
+
+func attack_state2(delta):
+	velocity = Vector2.ZERO
+	animationState.travel("Attack_2")
+
+func attack_state3(delta):
+	velocity = Vector2.ZERO
+	animationState.travel("Attack_3")
+		
+func attack_finished():
+	state = MOVE
+		
+		
+	

@@ -1,10 +1,8 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Map/Foreground/tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=2]
 [ext_resource path="res://src/Scenes/Character/HeroKnight.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Map/Farground/far-grounds.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Map/Farground/clouds.png" type="Texture" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 74, 66, 29, 66, 0, 8, 100, 8 )
@@ -687,7 +685,6 @@ points = PoolVector2Array( 1.75703, 11.3273, 4.34113, 10.6813, 10.1553, 7.45117,
 [node name="Character" type="YSort" parent="."]
 
 [node name="HeroKnight" parent="Character" instance=ExtResource( 3 )]
-position = Vector2( 279.597, 377.141 )
 
 [node name="Ground" type="YSort" parent="."]
 
@@ -699,25 +696,13 @@ cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 8
 collision_mask = 8
 format = 1
-tile_data = PoolIntArray( 1310738, 6, 0, 1310743, 6, 0, 1310754, 6, 0, 1310766, 6, 0, 1638430, 13, 0, 1703973, 13, 0, 1769484, 1, 0, 1769488, 2, 0, 1769489, 2, 0, 1769490, 2, 0, 1769491, 2, 0, 1769492, 2, 0, 1769493, 2, 0, 1769494, 2, 0, 1769495, 2, 0, 1769496, 2, 0, 1769497, 2, 0, 1769498, 3, 0, 1769499, 2, 0, 1769500, 2, 0, 1769501, 2, 0, 1769502, 2, 0, 1769503, 2, 0, 1769504, 2, 0, 1769505, 2, 0, 1769506, 2, 0, 1769507, 2, 0, 1769508, 2, 0, 1769509, 2, 0, 1769510, 2, 0, 1769511, 2, 0, 1769512, 3, 0, 1769519, 0, 0, 1900551, 5, 0, 2031672, 0, 0, 2097154, 5, 0 )
+tile_data = PoolIntArray( 1114141, 0, 0, 1310738, 6, 0, 1310743, 6, 0, 1310754, 6, 0, 1310766, 6, 0, 1638430, 13, 0, 1703973, 13, 0, 1769472, 0, 0, 1769478, 0, 0, 1769484, 1, 0, 1769488, 2, 0, 1769489, 2, 0, 1769490, 2, 0, 1769491, 2, 0, 1769492, 2, 0, 1769493, 2, 0, 1769494, 2, 0, 1769495, 2, 0, 1769496, 2, 0, 1769497, 2, 0, 1769498, 3, 0, 1769499, 2, 0, 1769500, 2, 0, 1769501, 2, 0, 1769502, 2, 0, 1769503, 2, 0, 1769504, 2, 0, 1769505, 2, 0, 1769506, 2, 0, 1769507, 2, 0, 1769508, 2, 0, 1769509, 2, 0, 1769510, 2, 0, 1769511, 2, 0, 1769512, 3, 0, 1769519, 0, 0, 2031672, 0, 0 )
 
 [node name="Backgorund" type="YSort" parent="."]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="Backgorund"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Backgorund/ParallaxBackground"]
-motion_mirroring = Vector2( 500, 0 )
-
-[node name="Sky" type="Sprite" parent="Backgorund/ParallaxBackground/ParallaxLayer"]
-position = Vector2( 260.154, 232.727 )
-scale = Vector2( 4.63655, 1.53165 )
+[node name="Sky" type="Sprite" parent="Backgorund/ParallaxBackground"]
+scale = Vector2( 9.14286, 1.97368 )
 texture = ExtResource( 2 )
-
-[node name="Farground" type="Sprite" parent="Backgorund/ParallaxBackground/ParallaxLayer"]
-position = Vector2( 260.25, 400 )
-scale = Vector2( 0.838474, 1 )
-texture = ExtResource( 4 )
-
-[node name="Clouds" type="Sprite" parent="Backgorund/ParallaxBackground/ParallaxLayer"]
-position = Vector2( 265, 484 )
-texture = ExtResource( 5 )
+centered = false
