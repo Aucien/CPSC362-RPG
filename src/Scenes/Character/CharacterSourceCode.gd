@@ -62,6 +62,14 @@ func move_state(delta):
 			velocity.y = JUMP_PW
 		if on_ground == true:
 			velocity.x = lerp(velocity.x, 0 , 0.1)
+		
+		#While not jump	
+		if Input.is_action_just_pressed("attack1"):
+			state = ATTACK_1
+		if Input.is_action_just_pressed("attack2"):
+			state = ATTACK_2
+		if Input.is_action_just_pressed("attack3"):
+			state = ATTACK_3
 	else:
 		if velocity.y < 0:
 			animationState.travel("Jump")
@@ -69,15 +77,10 @@ func move_state(delta):
 			animationState.travel("Fall")
 		if on_ground == true:
 			velocity.x = lerp(velocity.x, 0 , 0.01)
+			
 
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
-	if Input.is_action_just_pressed("attack1"):
-		state = ATTACK_1
-	if Input.is_action_just_pressed("attack2"):
-		state = ATTACK_2
-	if Input.is_action_just_pressed("attack3"):
-		state = ATTACK_3
 		
 func attack_state1(delta):
 	velocity = Vector2.ZERO
