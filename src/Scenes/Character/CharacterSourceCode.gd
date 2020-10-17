@@ -35,10 +35,13 @@ func _physics_process(delta):
 			attack_state3(delta)
 		BLOCK:
 			pass
+		DEATH:
+			death_state(delta)
 
 func move_state(delta):
 	var input_vector = Vector2.ZERO
 	var on_ground = false
+	var fall = 0
 
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector = input_vector.normalized()
@@ -75,12 +78,13 @@ func move_state(delta):
 			animationState.travel("Jump")
 		else:
 			animationState.travel("Fall")
+			if velocity.y > 2000: #stop endless falling (temporary)
+				get_tree().reload_current_scene()
+				
 		if on_ground == true:
 			velocity.x = lerp(velocity.x, 0 , 0.01)
-			
 
 	velocity = move_and_slide(velocity, Vector2.UP)
-	
 		
 func attack_state1(delta):
 	velocity = Vector2.ZERO
@@ -96,6 +100,8 @@ func attack_state3(delta):
 		
 func attack_finished():
 	state = MOVE
-		
+	
+func death_state(delta):
+	animationState.travel("Death")
 		
 	
