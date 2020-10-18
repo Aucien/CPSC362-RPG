@@ -160,7 +160,7 @@ tracks/5/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=46]
+[sub_resource type="Animation" id=3]
 resource_name = "Attack_3"
 length = 0.8
 tracks/0/type = "value"
@@ -238,7 +238,7 @@ tracks/5/keys = {
 "values": [ 18.571 ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=4]
 resource_name = "Death"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -265,7 +265,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -291,7 +291,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=6]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -319,7 +319,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="Animation" id=7]
 length = 0.24
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -346,7 +346,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=50]
+[sub_resource type="Animation" id=46]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -373,33 +373,29 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "Attack_1"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Attack_2"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Attack_3"
 
-[sub_resource type="AnimationNodeAnimation" id=38]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Death"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "Fall"
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=14]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=13]
+[sub_resource type="AnimationNodeAnimation" id=15]
 animation = "Jump"
 
-[sub_resource type="AnimationNodeAnimation" id=14]
+[sub_resource type="AnimationNodeAnimation" id=16]
 animation = "Run"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
 
@@ -435,6 +431,16 @@ animation = "Run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=39]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
@@ -443,37 +449,31 @@ animation = "Run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=42]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=43]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=44]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=45]
-
-[sub_resource type="AnimationNodeStateMachine" id=34]
-states/Attack_1/node = SubResource( 8 )
+[sub_resource type="AnimationNodeStateMachine" id=43]
+states/Attack_1/node = SubResource( 9 )
 states/Attack_1/position = Vector2( 237, 125 )
-states/Attack_2/node = SubResource( 9 )
+states/Attack_2/node = SubResource( 10 )
 states/Attack_2/position = Vector2( 246, 208 )
-states/Attack_3/node = SubResource( 10 )
+states/Attack_3/node = SubResource( 11 )
 states/Attack_3/position = Vector2( 17, 158.84 )
-states/Death/node = SubResource( 38 )
+states/Death/node = SubResource( 12 )
 states/Death/position = Vector2( 597.5, 93.3403 )
-states/Fall/node = SubResource( 11 )
+states/Fall/node = SubResource( 13 )
 states/Fall/position = Vector2( 437, 133.958 )
-states/Idle/node = SubResource( 12 )
+states/Idle/node = SubResource( 14 )
 states/Idle/position = Vector2( 237, 31 )
-states/Jump/node = SubResource( 13 )
+states/Jump/node = SubResource( 15 )
 states/Jump/position = Vector2( 429.25, 22.75 )
-states/Run/node = SubResource( 14 )
+states/Run/node = SubResource( 16 )
 states/Run/position = Vector2( 413, 224 )
-transitions = [ "Idle", "Run", SubResource( 15 ), "Run", "Idle", SubResource( 16 ), "Idle", "Attack_1", SubResource( 17 ), "Attack_1", "Idle", SubResource( 18 ), "Attack_1", "Run", SubResource( 19 ), "Run", "Attack_1", SubResource( 20 ), "Run", "Jump", SubResource( 21 ), "Jump", "Idle", SubResource( 22 ), "Idle", "Jump", SubResource( 23 ), "Attack_1", "Jump", SubResource( 24 ), "Attack_1", "Attack_2", SubResource( 25 ), "Attack_2", "Idle", SubResource( 26 ), "Attack_2", "Jump", SubResource( 27 ), "Attack_2", "Run", SubResource( 28 ), "Idle", "Fall", SubResource( 29 ), "Fall", "Idle", SubResource( 30 ), "Idle", "Attack_3", SubResource( 31 ), "Attack_3", "Idle", SubResource( 32 ), "Attack_2", "Attack_3", SubResource( 33 ), "Idle", "Death", SubResource( 39 ), "Fall", "Death", SubResource( 40 ), "Run", "Death", SubResource( 41 ), "Jump", "Death", SubResource( 42 ), "Attack_1", "Death", SubResource( 43 ), "Attack_2", "Death", SubResource( 44 ), "Attack_3", "Death", SubResource( 45 ) ]
+transitions = [ "Idle", "Run", SubResource( 17 ), "Run", "Idle", SubResource( 18 ), "Idle", "Attack_1", SubResource( 19 ), "Attack_1", "Idle", SubResource( 20 ), "Attack_1", "Run", SubResource( 21 ), "Run", "Attack_1", SubResource( 22 ), "Run", "Jump", SubResource( 23 ), "Jump", "Idle", SubResource( 24 ), "Idle", "Jump", SubResource( 25 ), "Attack_1", "Jump", SubResource( 26 ), "Attack_1", "Attack_2", SubResource( 27 ), "Attack_2", "Idle", SubResource( 28 ), "Attack_2", "Jump", SubResource( 29 ), "Attack_2", "Run", SubResource( 30 ), "Idle", "Fall", SubResource( 31 ), "Fall", "Idle", SubResource( 32 ), "Idle", "Attack_3", SubResource( 33 ), "Attack_3", "Idle", SubResource( 34 ), "Attack_2", "Attack_3", SubResource( 35 ), "Idle", "Death", SubResource( 36 ), "Fall", "Death", SubResource( 37 ), "Run", "Death", SubResource( 38 ), "Jump", "Death", SubResource( 39 ), "Attack_1", "Death", SubResource( 40 ), "Attack_2", "Death", SubResource( 41 ), "Attack_3", "Death", SubResource( 42 ) ]
 start_node = "Idle"
 end_node = "Death"
 graph_offset = Vector2( -235, -25.1597 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=35]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=44]
 
-[sub_resource type="CapsuleShape2D" id=36]
+[sub_resource type="CapsuleShape2D" id=45]
 radius = 15.3295
 height = 11.446
 
@@ -488,23 +488,23 @@ scale = Vector2( 1.06, 1.22727 )
 texture = ExtResource( 1 )
 vframes = 9
 hframes = 10
-frame = 3
+frame = 5
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Attack_1 = SubResource( 1 )
 anims/Attack_2 = SubResource( 2 )
-anims/Attack_3 = SubResource( 46 )
-anims/Death = SubResource( 37 )
-anims/Fall = SubResource( 47 )
-anims/Idle = SubResource( 48 )
-anims/Jump = SubResource( 49 )
-anims/Run = SubResource( 50 )
+anims/Attack_3 = SubResource( 3 )
+anims/Death = SubResource( 4 )
+anims/Fall = SubResource( 5 )
+anims/Idle = SubResource( 6 )
+anims/Jump = SubResource( 7 )
+anims/Run = SubResource( 46 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 34 )
+tree_root = SubResource( 43 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 35 )
+parameters/playback = SubResource( 44 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2( 4.8125, -6.4375 )
@@ -522,11 +522,12 @@ drag_margin_v_enabled = true
 [node name="PlayerHitbox" parent="Position2D" instance=ExtResource( 3 )]
 position = Vector2( -0.176758, 0.176758 )
 collision_layer = 0
-collision_mask = 2147483680
+collision_mask = 2147483682
 
 [node name="CollisionShape2D" parent="Position2D/PlayerHitbox" index="0"]
 position = Vector2( 35.0313, -1.45419 )
-shape = SubResource( 36 )
+shape = SubResource( 45 )
 disabled = true
+[connection signal="body_entered" from="Position2D/PlayerHitbox" to="Position2D/PlayerHitbox" method="_on_PlayerHitbox_body_entered"]
 
 [editable path="Position2D/PlayerHitbox"]
