@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/Map/Foreground/tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=2]
 [ext_resource path="res://src/Scenes/Character/HeroKnight.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Scenes/Enemies/StinkyMush.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Scenes/Enemies/Skeleton.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 74, 66, 29, 66, 0, 8, 100, 8 )
@@ -690,6 +691,9 @@ position = Vector2( -48, 352 )
 
 [node name="HeroKnight" parent="Character" instance=ExtResource( 3 )]
 position = Vector2( 408, 384 )
+
+[node name="Skeleton" parent="Character" instance=ExtResource( 5 )]
+position = Vector2( 306, 382 )
 
 [node name="Ground" type="YSort" parent="."]
 
