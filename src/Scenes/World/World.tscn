@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Map/Foreground/tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=2]
 [ext_resource path="res://src/Scenes/Character/HeroKnight.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Scenes/Enemies/StinkyMush.tscn" type="PackedScene" id=4]
-[ext_resource path="res://src/Scenes/Enemies/FlyingEye.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 74, 66, 29, 66, 0, 8, 100, 8 )
@@ -685,9 +684,6 @@ points = PoolVector2Array( 1.75703, 11.3273, 4.34113, 10.6813, 10.1553, 7.45117,
 [node name="World" type="YSort"]
 
 [node name="Character" type="YSort" parent="."]
-
-[node name="FlyingEye" parent="Character" instance=ExtResource( 5 )]
-position = Vector2( 229.245, 380.806 )
 
 [node name="StinkyMush" parent="Character" instance=ExtResource( 4 )]
 position = Vector2( -48, 352 )
