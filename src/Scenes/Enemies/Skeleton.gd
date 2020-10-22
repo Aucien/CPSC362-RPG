@@ -41,7 +41,7 @@ func idle_state(delta):
 	animationState.travel("Idle")
 
 func take_hit(delta):
-	animationState.travel("Take_Hit")
+	animationState.travel("Take Hit")
 	
 func death_state(delta):
 	animationState.travel("Death")
