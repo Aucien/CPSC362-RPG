@@ -23,7 +23,7 @@ enum {
 onready var stats = $Stats
 onready var hp = stats.health
 onready var playerDetectionZone = $PlayerDectection
-onready var animationPlayer = $AnimationMush
+onready var animationPlayer = $AnimationPlayer
 onready var animationState = $AnimationTree.get("parameters/playback")
 
 func _ready():

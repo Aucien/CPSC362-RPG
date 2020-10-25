@@ -206,7 +206,7 @@ animation = "Death"
 [sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=24]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Run"
 
 [sub_resource type="AnimationNodeAnimation" id=9]
@@ -220,24 +220,24 @@ animation = "Take_Hit"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+[sub_resource type="AnimationNodeStateMachineTransition" id=17]
 
 [sub_resource type="AnimationNodeStateMachine" id=18]
 states/Death/node = SubResource( 6 )
 states/Death/position = Vector2( 419, 138 )
 states/Idle/node = SubResource( 7 )
 states/Idle/position = Vector2( 282, 42.5 )
-states/Run/node = SubResource( 24 )
+states/Run/node = SubResource( 8 )
 states/Run/position = Vector2( 126, 85 )
 states/Take_Hit/node = SubResource( 9 )
 states/Take_Hit/position = Vector2( 221.5, 182 )
-transitions = [ "Idle", "Death", SubResource( 10 ), "Idle", "Take_Hit", SubResource( 11 ), "Take_Hit", "Idle", SubResource( 12 ), "Take_Hit", "Death", SubResource( 13 ), "Idle", "Run", SubResource( 25 ), "Run", "Take_Hit", SubResource( 26 ), "Run", "Death", SubResource( 27 ), "Take_Hit", "Run", SubResource( 28 ) ]
+transitions = [ "Idle", "Death", SubResource( 10 ), "Idle", "Take_Hit", SubResource( 11 ), "Take_Hit", "Idle", SubResource( 12 ), "Take_Hit", "Death", SubResource( 13 ), "Idle", "Run", SubResource( 14 ), "Run", "Take_Hit", SubResource( 15 ), "Run", "Death", SubResource( 16 ), "Take_Hit", "Run", SubResource( 17 ) ]
 start_node = "Idle"
 end_node = "Death"
 
@@ -247,7 +247,7 @@ end_node = "Death"
 radius = 10.4422
 height = 24.0
 
-[sub_resource type="CapsuleShape2D" id=29]
+[sub_resource type="CapsuleShape2D" id=21]
 radius = 19.6615
 height = 219.152
 
@@ -261,7 +261,6 @@ script = ExtResource( 4 )
 position = Vector2( 314.656, 32.3279 )
 texture = ExtResource( 1 )
 hframes = 4
-frame = 1
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 position = Vector2( 314.829, 41.0576 )
@@ -298,7 +297,7 @@ collision_mask = 1
 modulate = Color( 1, 1, 1, 0.466667 )
 position = Vector2( 315.431, -42.6266 )
 rotation = 1.5708
-shape = SubResource( 29 )
+shape = SubResource( 21 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2( 324.126, 52.0842 )
