@@ -1,15 +1,17 @@
 extends KinematicBody2D
 
-const MAX_SPEED = 200
-const GRAVITY = 20
-const ACCELERATION = 80
-const JUMP_PW= -400
+export var MAX_SPEED = 200
+export var GRAVITY = 20
+export var ACCELERATION = 80
+export var JUMP_PW= -400
 
 var state = MOVE
 var velocity = Vector2.ZERO
+
 onready var initial_scale = scale
 onready var animationPlayer = $AnimationPlayer
 onready var animationState = $AnimationTree.get("parameters/playback")
+onready var swordHitbox = $Position2D/Hitbox
 
 enum {
 	MOVE,
@@ -21,7 +23,7 @@ enum {
 }
 
 func _ready():
-	pass
+	swordHitbox.knockback_vector = Vector2.ZERO
 
 func _physics_process(delta):
 	match state:
@@ -41,12 +43,12 @@ func _physics_process(delta):
 func move_state(delta):
 	var input_vector = Vector2.ZERO
 	var on_ground = false
-	var fall = 0
 
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector = input_vector.normalized()
 
 	if input_vector != Vector2.ZERO:
+		swordHitbox.knockback_vector = input_vector
 		if input_vector.x > 0:
 			velocity.x = min(velocity.x + ACCELERATION, MAX_SPEED)
 			scale.x = initial_scale.x * sign(scale.y)

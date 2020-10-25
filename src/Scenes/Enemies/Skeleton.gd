@@ -32,7 +32,7 @@ func _physics_process(delta):
 		state = DEATH
 
 func _on_Hurtbox_area_entered(area):
-	if area.name == "PlayerHitbox":
+	if area.name == "Hitbox":
 		hp -= area.damage
 		state = TAKE_HIT
 		print(hp)

@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=32 format=2]
+=======
+[gd_scene load_steps=29 format=2]
+>>>>>>> Stashed changes
 
 [ext_resource path="res://Assets/Map/Foreground/tileset.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=2]
@@ -7,6 +11,9 @@
 [ext_resource path="res://src/Scenes/Enemies/Skeleton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Scenes/Enemies/Goblin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Scenes/Enemies/FlyingEye.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Map/Farground/sea.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Map/Farground/clouds.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Map/Farground/far-grounds.png" type="Texture" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 100, 75, 0, 74, 0, 2, 100, 2 )
@@ -762,20 +769,20 @@ points = PoolVector2Array( 31, 32, 3, 32, 3, 0, 31, 0 )
 
 [node name="Character" type="YSort" parent="."]
 
-[node name="StinkyMush" parent="Character" instance=ExtResource( 4 )]
-position = Vector2( -48, 352 )
-
 [node name="HeroKnight" parent="Character" instance=ExtResource( 3 )]
-position = Vector2( 408, 384 )
+position = Vector2( 556.651, 378.649 )
 
 [node name="Skeleton" parent="Character" instance=ExtResource( 5 )]
-position = Vector2( 306, 382 )
+position = Vector2( 764.439, 382.5 )
 
 [node name="FlyingEye" parent="Character" instance=ExtResource( 7 )]
-position = Vector2( 564.766, 385.887 )
+position = Vector2( 193.044, 237.236 )
 
 [node name="Goblin" parent="Character" instance=ExtResource( 6 )]
-position = Vector2( 487.353, 371.872 )
+position = Vector2( 936.333, 457.387 )
+
+[node name="StinkyMush" parent="Character" instance=ExtResource( 4 )]
+position = Vector2( 91.4487, 350.311 )
 
 [node name="Ground" type="YSort" parent="."]
 
@@ -787,7 +794,7 @@ cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 collision_layer = 8
 collision_mask = 8
 format = 1
-tile_data = PoolIntArray( 1114141, 0, 0, 1310738, 6, 0, 1310743, 6, 0, 1310754, 6, 0, 1310766, 6, 0, 1638430, 13, 0, 1703973, 13, 0, 1769484, 1, 0, 1769488, 2, 0, 1769489, 2, 0, 1769490, 2, 0, 1769491, 2, 0, 1769492, 2, 0, 1769493, 2, 0, 1769494, 2, 0, 1769495, 2, 0, 1769496, 2, 0, 1769497, 2, 0, 1769498, 3, 0, 1769499, 2, 0, 1769500, 2, 0, 1769501, 2, 0, 1769502, 2, 0, 1769503, 2, 0, 1769504, 2, 0, 1769505, 2, 0, 1769506, 2, 0, 1769507, 2, 0, 1769508, 2, 0, 1769509, 2, 0, 1769510, 2, 0, 1769511, 2, 0, 1769512, 3, 0, 1769519, 0, 0, 1835014, 0, 0, 1966080, 0, 0, 2031672, 0, 0 )
+tile_data = PoolIntArray( 1310738, 6, 0, 1310743, 6, 0, 1310754, 6, 0, 1310766, 6, 0, 1769481, 1, 0, 1769485, 2, 0, 1769486, 2, 0, 1769487, 2, 0, 1769488, 2, 0, 1769489, 2, 0, 1769490, 2, 0, 1769491, 2, 0, 1769492, 2, 0, 1769493, 2, 0, 1769494, 2, 0, 1769495, 2, 0, 1769496, 2, 0, 1769497, 2, 0, 1769498, 2, 0, 1769499, 2, 0, 1769500, 2, 0, 1769501, 2, 0, 1769502, 2, 0, 1769503, 2, 0, 1769504, 2, 0, 1769505, 2, 0, 1769506, 2, 0, 1769507, 2, 0, 1769508, 2, 0, 1769509, 2, 0, 1769510, 3, 0, 1769520, 0, 0, 2097211, 0, 0, 2162689, 0, 0 )
 
 [node name="Backgorund" type="YSort" parent="."]
 
@@ -796,6 +803,32 @@ tile_data = PoolIntArray( 1114141, 0, 0, 1310738, 6, 0, 1310743, 6, 0, 1310754, 
 [node name="Sky" type="Sprite" parent="Backgorund/ParallaxBackground"]
 scale = Vector2( 9.17857, 1.97368 )
 texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Clouds" type="Sprite" parent="Backgorund/ParallaxBackground"]
+position = Vector2( 515.068, 257.84 )
+scale = Vector2( 1.89178, 1 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Farground" type="Sprite" parent="Backgorund/ParallaxBackground"]
+visible = false
+position = Vector2( 508.347, 307.941 )
+scale = Vector2( 1.70621, 1 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sea" type="Sprite" parent="Backgorund/ParallaxBackground"]
+position = Vector2( 1, 355.638 )
+scale = Vector2( 9.14534, 2.56824 )
+texture = ExtResource( 8 )
 centered = false
 __meta__ = {
 "_edit_lock_": true

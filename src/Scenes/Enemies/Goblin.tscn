@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/Enemies/Monsters_Creatures_Fantasy/Goblin/Death.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Enemies/Monsters_Creatures_Fantasy/Goblin/Run.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Enemies/Monsters_Creatures_Fantasy/Goblin/Take Hit.png" type="Texture" id=6]
-[ext_resource path="res://src/Scenes/Character/Hurtbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/Scenes/Info/Hurtbox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://src/Scenes/Enemies/Goblin.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]

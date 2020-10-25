@@ -3,7 +3,7 @@
 [ext_resource path="res://Assets/Enemies/Monsters_Creatures_Fantasy/Skeleton/Death.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Enemies/Monsters_Creatures_Fantasy/Skeleton/Idle.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Enemies/Monsters_Creatures_Fantasy/Skeleton/Take Hit.png" type="Texture" id=3]
-[ext_resource path="res://src/Scenes/Character/Hurtbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Scenes/Info/Hurtbox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Scenes/Enemies/Skeleton.gd" type="Script" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -183,7 +183,7 @@ script = ExtResource( 5 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 4
-frame = 1
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 4, 2 )

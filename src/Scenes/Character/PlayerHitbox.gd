@@ -1,3 +1,3 @@
-extends Area2D
+extends "res://src/Scenes/Info/Hitbox.gd"
 
-export var damage = 1
+var knockback_vector = Vector2.ZERO
