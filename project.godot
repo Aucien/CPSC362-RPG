@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Cpsc 362- Rpg"
-run/main_scene="res://src/Scenes/World/World.tscn"
+run/main_scene="res://src/Scenes/Menus/TitleScreen.tscn"
 
 [display]
 

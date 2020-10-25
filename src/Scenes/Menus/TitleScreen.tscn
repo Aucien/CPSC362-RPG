@@ -1,39 +1,99 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=1]
 [ext_resource path="res://src/Scenes/Menus/Buttons/StartGameButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Scenes/Menus/Fonts/Font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://src/Scenes/Menus/TitleScreen.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Map/Farground/clouds.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Map/Farground/sea.png" type="Texture" id=6]
+[ext_resource path="res://src/Scenes/Menus/Heros-Journey.png" type="Texture" id=7]
 
 [node name="TitleScreen" type="Control"]
-margin_right = 1025.0
-margin_bottom = 603.0
+margin_left = 16.5229
+margin_top = -5.52995
+margin_right = 1041.52
+margin_bottom = 597.47
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 122.119
-margin_top = 78.9405
-margin_right = 906.119
-margin_bottom = 518.941
+margin_left = 382.523
+margin_top = 448.58
+margin_right = 850.523
+margin_bottom = 513.58
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_right = 784.0
-margin_bottom = 440.0
+margin_right = 468.0
+margin_bottom = 65.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 784.0
-margin_bottom = 440.0
+margin_right = 468.0
+margin_bottom = 65.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StartGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
-margin_right = 784.0
+margin_right = 468.0
 margin_bottom = 43.0
 custom_fonts/font = ExtResource( 3 )
 scene_to_load = "res://src/Scenes/World/World.tscn"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="sky" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 394.085, 535.579 )
+scale = Vector2( 4.66463, 1.98709 )
+texture = ExtResource( 1 )
+offset = Vector2( -28.5395, -117.209 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="sky2" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 916.035, 534.989 )
+scale = Vector2( 4.66463, 1.98709 )
+texture = ExtResource( 1 )
+offset = Vector2( -28.5395, -117.209 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cloud" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 274.663, 360.337 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Cloud2" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 800.05, 360.337 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sea" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 265.213, 492.629 )
+scale = Vector2( 4.70102, 2.28617 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground"]
+position = Vector2( 767.922, 492.629 )
+scale = Vector2( 4.70102, 2.28617 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Heros-Journey" type="Sprite" parent="."]
+position = Vector2( 489.761, 169.998 )
+texture = ExtResource( 7 )
