@@ -40,18 +40,20 @@ func _physics_process(delta):
 		else:
 			$Sprite.flip_h = true
 			
-		velocity.y += GRAVITY
+		velocity.y = -GRAVITY
+		
+		if (velocity.y > 10):
+			velocity.y -= GRAVITY
 		
 		velocity = move_and_slide(velocity, FLOOR)
-	
 	
 		if is_on_wall():
 			direction = direction * -1
 		#$RayCast2D.position.x *= -1
-
-	#if $RayCast2D.is_colliding() == false:
-		#direction = direction* -1
-		#$RayCast2D.position.x *= -1
+	
+		#if $RayCast2D.is_colliding() == false:
+			direction = direction* -1
+			#$RayCast2D.position.x *= -1
 		match state:
 			IDLE:
 				flying(delta)
@@ -63,10 +65,12 @@ func _physics_process(delta):
 		if hp <= 0:
 			state = DEATH
 			velocity = Vector2(0,0)
+			
 func _on_Hurtbox_area_entered(area):
 	if area.name == "Hitbox":
 		hp -= area.damage
 		state = TAKE_HIT
 		print(hp)
-		
+
+
 		

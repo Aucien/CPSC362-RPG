@@ -8,6 +8,8 @@ export var JUMP_PW= -400
 var state = MOVE
 var velocity = Vector2.ZERO
 
+onready var stats = $Stats
+onready var hp = stats.health
 onready var initial_scale = scale
 onready var animationPlayer = $AnimationPlayer
 onready var animationState = $AnimationTree.get("parameters/playback")
@@ -105,5 +107,10 @@ func attack_finished():
 	
 func death_state(delta):
 	animationState.travel("Death")
-		
-	
+
+func _on_Hurtbox_area_entered(area):
+	if area.name == "Hitbox":
+		hp -= area.damage
+		print(hp)
+		if hp <= 0:
+			state = DEATH
