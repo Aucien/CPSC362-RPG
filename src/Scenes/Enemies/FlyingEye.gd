@@ -1,76 +1,162 @@
 extends KinematicBody2D
-
-const GRAVITY = 10
-const SPEED = 30
-const FLOOR = Vector2(0,-1)
+export var MAX_ROAMING_RANGE = 4
+export var MAX_ROAMING_Y = 5
+export var MAX_SPEED = 100
+export var GRAVITY = 20
+export var ACCELERATION = 80
+export var FRICTION = 150
 
 var velocity = Vector2()
-
-var direction = 1
-
-var state = IDLE
+var knockback = Vector2.ZERO
+var state = CHASE
+var is_dead = false
 
 enum {
 	IDLE,
 	TAKE_HIT,
-	DEATH
+	DEATH,
+	CHASE,
+	ATTACK,
+	ROAM
 }
-var hp = 1
+
+onready var initial_scale = scale
+onready var roamAI = $RoamingAI
+onready var stats = $Stats
+onready var hp = stats.health
+onready var playerDetectionZone = $PlayerDectection
+
+
+var coin_scene = preload("res://src/Scenes/Items/Coin.tscn")
+var floatingText = preload("res://src/Scenes/Interface/floating_text.tscn")
 
 func _ready():
-	pass
-	
-func flying(delta):
-	$Sprite.play("Flying")
-
-func take_hit(delta):
-	$Sprite.play("Damage")
-	
-func dead(delta):
-	velocity = Vector2(0,0)
-	$Sprite.play("Death")
-
+	pick_random_state([IDLE,ROAM])
+	randomize() #to random the game's seed every time 
 	
 func _physics_process(delta):
 	
-		velocity.x = SPEED * direction
-		
-		if direction == 1:
-			$Sprite.flip_h = false
-		else:
-			$Sprite.flip_h = true
+	velocity.y += GRAVITY	
+	knockback = knockback.move_toward(Vector2.ZERO, FRICTION * delta)
+	knockback = move_and_slide(knockback)
+	match state:
+		IDLE:
+			idle_state(delta)
+		TAKE_HIT:
+			take_hit(delta)
+		DEATH:
+			death_state(delta)
+		CHASE:
+			chase_state(delta)
+		ATTACK:
+			attack_state()
+		ROAM:
+			detectPlayer()
+			if roamAI.get_time_left() == 0:
+				roamAI_update()
+			var direction = global_position.direction_to(roamAI.target_position).normalized()
+			if roamAI.target_position.x < 0:
+				$Sprite.play("Flying")
+				scale.x = -initial_scale.x * sign(scale.y)
+				velocity.x = -max(direction.x + ACCELERATION, MAX_SPEED * delta)
+			elif roamAI.target_position.x > 0:
+				$Sprite.play("Flying")
+				scale.x = initial_scale.x * sign(scale.y)
+				velocity.x = max(direction.x + ACCELERATION, MAX_SPEED * delta)
 			
-		velocity.y = -GRAVITY
-		
-		if (velocity.y > 10):
-			velocity.y -= GRAVITY
-		
-		velocity = move_and_slide(velocity, FLOOR)
+			#Prevent enemies from roaming too far away their original position
+			if global_position.distance_to(roamAI.target_position) <= MAX_ROAMING_RANGE:
+				roamAI_update()
+			
+			area_checking()
+				
+	#if the enemies fall, they will die
+	if velocity.y > 650:
+		queue_free()
 	
-		if is_on_wall():
-			direction = direction * -1
-		#$RayCast2D.position.x *= -1
-	
-		#if $RayCast2D.is_colliding() == false:
-			direction = direction* -1
-			#$RayCast2D.position.x *= -1
-		match state:
-			IDLE:
-				flying(delta)
-			TAKE_HIT:
-				take_hit(delta)
-			DEATH:
-				dead(delta)
+	velocity = move_and_slide(velocity)
+func pick_random_state(state_list):
+	state_list.shuffle()
+	return state_list.pop_front()
 
-		if hp <= 0:
-			state = DEATH
-			velocity = Vector2(0,0)
-			
+func roamAI_update():
+	state = pick_random_state([IDLE,ROAM])
+	roamAI.start_roaming_timer(rand_range(1,3))
+	
+func detectPlayer():
+	if playerDetectionZone.detected():
+		state = CHASE
+		
 func _on_Hurtbox_area_entered(area):
 	if area.name == "Hitbox":
-		hp -= area.damage
+		hp -= area.MAX_DAMAGE
+		var text = floatingText.instance()
+		text.amount = area.MAX_DAMAGE
+		add_child(text)
+		knockback = area.knockback_vector * FRICTION
 		state = TAKE_HIT
-		print(hp)
+		if hp < 0:
+			state = DEATH
+			on_death()
 
-
+func idle_state(delta):
+	velocity= Vector2.ZERO
+	$Sprite.play("Flying")
+	detectPlayer()
+	if roamAI.get_time_left() == 0:
+		roamAI_update()
+	
+func take_hit(delta):
+	$Sprite.play("Damage")
+	
+func death_state(delta):
+	velocity = Vector2.ZERO
+	$Sprite.play("Death")
+	$CollisionShape2D2.disabled = true
+	$Timer.start()
+	
+	
+func chase_state(delta):
+	var player = playerDetectionZone.player
+	if player != null:
+		var location = (player.global_position  - global_position).normalized()
+		$Sprite.play("Flying")
+		if player.global_position < global_position:
+			scale.x = -initial_scale.x * sign(scale.y)
+			velocity.x = -max(location.x + ACCELERATION, MAX_SPEED * delta)
+			area_checking()
+		else:
+			scale.x = initial_scale.x * sign(scale.y)
+			velocity.x = max(location.x + ACCELERATION, MAX_SPEED * delta)
+			area_checking()
 		
+		if is_on_wall():
+			$Sprite.play("Attack")
+	else:
+		state = IDLE
+				
+func attack_state():
+	$Sprite.play("Attack")
+
+func takehit_finished():
+	state = IDLE
+	
+func attack_finished():
+	state = IDLE
+	
+func on_death():
+	var coin = coin_scene.instance()
+	coin.global_position = global_position
+	get_parent().add_child(coin)
+	
+func area_checking():
+	#If standing too close to the edge
+	if $RayCast2D.is_colliding() == false:
+		state = IDLE
+			
+	#Detect collision with wall
+
+
+
+func _on_Timer_timeout():
+	queue_free()

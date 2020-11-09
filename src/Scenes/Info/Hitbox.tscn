@@ -2,7 +2,6 @@
 
 [ext_resource path="res://src/Scenes/Info/Hitbox.gd" type="Script" id=1]
 
-
 [node name="Hitbox" type="Area2D"]
 script = ExtResource( 1 )
 
