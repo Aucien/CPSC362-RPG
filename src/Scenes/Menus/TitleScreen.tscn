@@ -9,10 +9,10 @@
 [ext_resource path="res://src/Scenes/Menus/Heros-Journey.png" type="Texture" id=7]
 
 [node name="TitleScreen" type="Control"]
-margin_left = 16.5229
-margin_top = -6.52995
-margin_right = 1041.52
-margin_bottom = 596.47
+margin_left = 48.4623
+margin_top = -1.6535
+margin_right = 1073.46
+margin_bottom = 601.346
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -42,13 +42,12 @@ size_flags_vertical = 3
 margin_right = 468.0
 margin_bottom = 43.0
 custom_fonts/font = ExtResource( 3 )
-scene_to_load = "res://src/Scenes/World/World.tscn"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="sky" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 394.085, 535.579 )
-scale = Vector2( 4.66463, 1.98709 )
+position = Vector2( 393.264, 535.579 )
+scale = Vector2( 4.69451, 1.98709 )
 texture = ExtResource( 1 )
 offset = Vector2( -28.5395, -117.209 )
 __meta__ = {
@@ -79,8 +78,8 @@ __meta__ = {
 }
 
 [node name="Sea" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 265.213, 492.629 )
-scale = Vector2( 4.70102, 2.28617 )
+position = Vector2( 261.866, 492.629 )
+scale = Vector2( 4.76078, 2.28617 )
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
@@ -95,5 +94,8 @@ __meta__ = {
 }
 
 [node name="Heros-Journey" type="Sprite" parent="."]
-position = Vector2( 489.761, 169.998 )
+position = Vector2( 472, 250 )
 texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}

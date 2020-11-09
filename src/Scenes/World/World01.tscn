@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://src/Scenes/World/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Screen Shot 2020-11-03 at 17.32.13.png" type="Texture" id=3]
+[ext_resource path="res://src/Scenes/World/Exit.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/Scenes/Interface/HealthBar/Healthbar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Scenes/Character/HeroKnight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Scenes/Enemies/Goblin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Map/Farground/sea.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Map/Farground/clouds.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Map/Farground/far-grounds.png" type="Texture" id=10]
+[ext_resource path="res://src/Scenes/Interface/CoinCounter.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Scenes/World/World01.gd" type="Script" id=12]
+
+[node name="World" type="YSort"]
+script = ExtResource( 12 )
+
+[node name="Character" type="YSort" parent="."]
+
+[node name="Goblin" parent="Character" instance=ExtResource( 7 )]
+position = Vector2( 614.216, 418.861 )
+
+[node name="HeroKnight" parent="Character" instance=ExtResource( 6 )]
+position = Vector2( 68, 418 )
+
+[node name="Ground" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap" type="TileMap" parent="Ground"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 15, 15 )
+cell_quadrant_size = 1
+collision_layer = 8
+collision_mask = 3
+format = 1
+tile_data = PoolIntArray( -393160, 536870949, 0, -393157, 536870950, 0, -393026, 536870949, 0, -262147, 38, 0, -327680, 37, 0, -327645, 536870949, 0, -327642, 536870950, 0, 65592, 536870949, 0, 65595, 536870950, 0, 65726, 536870949, 0, 196605, 38, 0, 131072, 37, 0, 131107, 536870949, 0, 131110, 536870950, 0, 524344, 536870949, 0, 524347, 536870950, 0, 524478, 536870949, 0, 655357, 38, 0, 589824, 37, 0, 589859, 536870949, 0, 589862, 37, 0, 721089, 16, 0, 917681, 0, 0, 983096, 536870949, 0, 983099, 536870950, 0, 983230, 536870949, 0, 1114109, 38, 0, 1048576, 37, 0, 1048611, 536870949, 0, 1048614, 37, 0, 1048682, 9, 0, 1179645, 536870936, 0, 1114296, 1, 0, 1114305, 16, 0, 1310908, 1, 0, 1376282, 4, 0, 1441796, 9, 0, 1441800, 536870921, 0, 1441832, 9, 0, 1441848, 536870949, 0, 1441851, 536870950, 0, 1441881, 4, 0, 1441982, 536870949, 0, 1572861, 536870936, 0, 1507328, 37, 0, 1507353, 27, 0, 1507363, 536870949, 0, 1507366, 37, 0, 1507422, 1, 0, 1507437, 4, 0, 1507521, 16, 0, 1572887, 20, 0, 1572940, 4, 0, 1572952, 4, 0, 1572971, 0, 0, 1573046, 0, 0, 1638420, 14, 0, 1638422, 18, 0, 1638424, 18, 0, 1638426, 18, 0, 1638428, 18, 0, 1638430, 21, 0, 1638475, 4, 0, 1638486, 0, 0, 1638499, 0, 0, 1703954, 14, 0, 1703968, 21, 0, 1703992, 4, 0, 1704014, 4, 0, 1704051, 1, 0, 1704060, 4, 0, 1769488, 14, 0, 1769506, 21, 0, 1769518, 27, 0, 1769530, 20, 0, 1769545, 536870912, 0, 1769550, 0, 0, 1769595, 4, 0, 1769647, 0, 0, 1835013, 20, 0, 1835020, 20, 0, 1835022, 14, 0, 1835028, 3, 0, 1835030, 3, 0, 1835032, 3, 0, 1835034, 3, 0, 1835036, 3, 0, 1835038, 3, 0, 1835044, 21, 0, 1835050, 4, 0, 1835062, 536870929, 0, 1835066, 16, 0, 1835067, 16, 0, 1835068, 17, 0, 1835073, 1, 0, 1835129, 0, 0, 1835138, 12, 0, 1835142, 16, 0, 1835143, 16, 0, 1835144, 16, 0, 1835145, 16, 0, 1835146, 16, 0, 1835147, 16, 0, 1835148, 16, 0, 1835149, 16, 0, 1835150, 16, 0, 1835151, 16, 0, 1835152, 16, 0, 1835153, 16, 0, 1835154, 16, 0, 1835155, 16, 0, 1835156, 16, 0, 1835157, 16, 0, 1835158, 16, 0, 1835159, 16, 0, 1835160, 16, 0, 1835161, 16, 0, 1835162, 16, 0, 1835163, 17, 0, 1835194, 0, 0, 1966077, 7, 0, 1900544, 7, 0, 1900547, 7, 0, 1900550, 7, 0, 1900553, 7, 0, 1900556, 24, 0, 1900562, 3, 0, 1900570, 1, 0, 1900575, 536870918, 0, 1900577, 3, 0, 1900578, 536870936, 0, 1900581, 7, 0, 1900584, 7, 0, 1900587, 7, 0, 1900590, 7, 0, 1900591, 7, 0, 1900594, 24, 0, 1900614, 1, 0, 1900711, 0, 0, 1966096, 3, 0, 1966110, 3, 0, 1966221, 536870918, 0, 1966239, 0, 0, 2031750, 536870918, 0, 2162685, 536870915, 0, 2162687, 536870915, 0, 2097152, 536870920, 0, 2097153, 536870915, 0, 2097155, 536870915, 0, 2097157, 536870915, 0, 2097159, 536870915, 0, 2097167, 536870918, 0, 2097189, 3, 0, 2097191, 3, 0, 2097193, 3, 0, 2097195, 3, 0, 2097196, 3, 0, 2097198, 3, 0, 2097200, 3, 0, 2162690, 536870918, 0, 2162708, 1, 0, 2162730, 8, 0, 2162734, 536870918, 0, 2293757, 536870915, 0, 2293759, 536870915, 0, 2228225, 536870915, 0, 2228227, 536870915, 0, 2228229, 536870915, 0, 2228231, 536870915, 0, 2228233, 536870915, 0, 2228235, 536870936, 0, 2228238, 24, 0, 2228256, 536870936, 0, 2228259, 24, 0, 2228265, 3, 0, 2228267, 3, 0, 2228268, 3, 0, 2228270, 3, 0, 2228272, 3, 0, 2293787, 6, 0, 2293800, 6, 0, 2293807, 8, 0, 2293810, 1073741848, 0, 2424829, 536870915, 0, 2424831, 536870915, 0, 2359297, 536870915, 0, 2359299, 536870915, 0, 2359301, 536870918, 0, 2359303, 536870915, 0, 2359322, 6, 0, 2359335, 6, 0, 2359337, 3, 0, 2359339, 3, 0, 2359340, 3, 0, 2359342, 3, 0, 2359344, 3, 0, 2555901, 536870915, 0, 2555903, 536870915, 0, 2490369, 536870915, 0, 2490371, 536870915, 0, 2490373, 536870915, 0, 2490375, 536870915, 0, 2490407, 3, 0, 2490409, 3, 0, 2490411, 3, 0, 2490413, 3, 0, 2490415, 3, 0, 2490416, 3, 0 )
+
+[node name="Backgorund" type="YSort" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="Backgorund"]
+
+[node name="Sky" type="Sprite" parent="Backgorund/ParallaxBackground"]
+scale = Vector2( 9.17857, 1.97368 )
+texture = ExtResource( 2 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Clouds" type="Sprite" parent="Backgorund/ParallaxBackground"]
+position = Vector2( 515.068, 257.84 )
+scale = Vector2( 1.89178, 1 )
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Farground" type="Sprite" parent="Backgorund/ParallaxBackground"]
+visible = false
+position = Vector2( 508.347, 320 )
+scale = Vector2( 1.70621, 1 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sea" type="Sprite" parent="Backgorund/ParallaxBackground"]
+position = Vector2( 1, 355.638 )
+scale = Vector2( 9.14534, 2.56824 )
+texture = ExtResource( 8 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Backgorund/ParallaxBackground"]
+
+[node name="Filler" type="Sprite" parent="Backgorund/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 385.787, 526.808 )
+scale = Vector2( 0.625105, 0.415629 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Healthbar" parent="CanvasLayer" instance=ExtResource( 5 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -2.18832
+margin_top = -6.40555
+margin_right = -2.18832
+margin_bottom = -6.40555
+
+[node name="Coin Counter" parent="CanvasLayer" instance=ExtResource( 11 )]
+margin_left = 946.0
+margin_top = 3.0
+margin_right = 1021.0
+margin_bottom = 53.0
+
+[node name="Exit" parent="." instance=ExtResource( 4 )]
+position = Vector2( 2708.08, 185.101 )
+next_world = "res://src/Scenes/Menus/TitleScreen.tscn"
