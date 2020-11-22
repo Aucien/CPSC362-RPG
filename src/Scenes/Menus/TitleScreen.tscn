@@ -56,7 +56,7 @@ scene_to_load = "res://src/Scenes/Menus/Controls.tscn"
 [node name="MenuButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]
 margin_top = 94.0
 margin_right = 467.0
-margin_bottom = 114.0
+margin_bottom = 134.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
