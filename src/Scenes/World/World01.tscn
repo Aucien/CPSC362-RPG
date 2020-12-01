@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/Scenes/World/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Map/Filter1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Screen Shot 2020-11-03 at 17.32.13.png" type="Texture" id=3]
 [ext_resource path="res://src/Scenes/World/Exit.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Scenes/Interface/HealthBar/Healthbar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Scenes/Character/HeroKnight.tscn" type="PackedScene" id=6]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Assets/Map/Farground/far-grounds.png" type="Texture" id=10]
 [ext_resource path="res://src/Scenes/Interface/CoinCounter.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/Scenes/World/World01.gd" type="Script" id=12]
-[ext_resource path="res://src/Scenes/Enemies/Skeleton.tscn" type="PackedScene" id=13]
 
 [node name="World" type="YSort"]
 script = ExtResource( 12 )
@@ -24,12 +23,6 @@ position = Vector2( 614.216, 418.861 )
 
 [node name="HeroKnight" parent="Character" instance=ExtResource( 6 )]
 position = Vector2( 68, 418 )
-
-[node name="Skeleton" parent="Character" instance=ExtResource( 13 )]
-position = Vector2( 2063.64, 407.527 )
-
-[node name="Skeleton2" parent="Character" instance=ExtResource( 13 )]
-position = Vector2( 2230.26, 406.451 )
 
 [node name="Ground" type="YSort" parent="."]
 __meta__ = {
@@ -114,4 +107,4 @@ margin_bottom = 53.0
 
 [node name="Exit" parent="." instance=ExtResource( 4 )]
 position = Vector2( 2708.08, 185.101 )
-next_world = "res://src/Scenes/World/World02.tscn"
+next_world = "res://src/Scenes/Menus/TitleScreen.tscn"

@@ -112,7 +112,6 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 8
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1, 5 )
@@ -134,7 +133,6 @@ parameters/playback = SubResource( 11 )
 layer = 100
 
 [node name="ColorRect" type="ColorRect" parent="TransitionLayer"]
-visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
 color = Color( 0, 0, 0, 0 )
