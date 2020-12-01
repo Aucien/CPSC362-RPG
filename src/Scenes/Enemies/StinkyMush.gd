@@ -50,7 +50,6 @@ func _physics_process(delta):
 			chase_state(delta)
 		ATTACK:
 			attack_state()
-		#RPG enemies's AI: Free on roaming
 		ROAM:
 			detectPlayer()
 			if roamAI.get_time_left() == 0:
@@ -114,8 +113,7 @@ func take_hit(delta):
 func death_state(delta):
 	velocity.x = 0
 	animationState.travel("Death")
-
-#RPG enemies's A.I: Detect and chase after player
+	
 func chase_state(delta):
 	var player = playerDetectionZone.player
 	if player != null: 

@@ -129,7 +129,6 @@ func block_state():
 	animationState.travel("Block")
 	
 func death_state(delta):
-	GlobalSave.player_hp = 10
 	animationState.travel("Death")
 
 func update_velocity(value):
@@ -150,7 +149,23 @@ func _on_Hurtbox_area_entered(area):
 			knockback.x = 0.3 * FRICTION
 		if GlobalSave.player_hp < 0:
 			state = DEATH
-			get_tree().change_scene("res://src/Scenes/Menus/GameOver.tscn")
+		
+	if area.name == "Boss_Hitbox":
+		print("Boss is attacking!")
+		#hp -= area.MAX_DAMAGE
+		GlobalSave.player_hp -= area.MAX_DAMAGE
+		#emit_signal("health_updated", GlobalSave.player_hp)
+		var text = floatingText.instance()
+		text.amount = area.MAX_DAMAGE
+		add_child(text)
+		state = BLOCK
+		
+		if spriteFlipped == true:
+			knockback.x = -1.5 * FRICTION
+		else:
+			knockback.x = 1.5 * FRICTION
+		if GlobalSave.player_hp < 0:
+			state = DEATH
 			
 func _on_PickupZone_area_entered(area):
 	if area.name == "Coin":
@@ -166,3 +181,6 @@ func _on_PickupZone_area_entered(area):
 			var text = floatingText.instance()
 			text.amount = MAX_HEALING
 			add_child(text)
+
+func end_game():
+	get_tree().change_scene("res://src/Scenes/Menus/GameOver.tscn")
