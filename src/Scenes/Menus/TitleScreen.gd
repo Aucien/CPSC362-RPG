@@ -7,5 +7,5 @@ func _ready():
 		button.connect("pressed", self, "on_ButtonPressed", [button.scene_to_load])
 
 func on_ButtonPressed(scene_to_load):
-	get_tree().change_scene("res://src/Scenes/World/World.tscn")
+	get_tree().change_scene(scene_to_load)
 

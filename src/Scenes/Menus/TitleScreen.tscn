@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=1]
 [ext_resource path="res://src/Scenes/Menus/Buttons/StartGameButton.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Map/Farground/clouds.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Map/Farground/sea.png" type="Texture" id=6]
 [ext_resource path="res://src/Scenes/Menus/Heros-Journey.png" type="Texture" id=7]
+[ext_resource path="res://src/Scenes/Menus/Buttons/Controls.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/Scenes/Menus/Buttons/Exitbutton.tscn" type="PackedScene" id=9]
 
 [node name="TitleScreen" type="Control"]
 margin_left = 48.4623
@@ -19,29 +21,43 @@ __meta__ = {
 }
 
 [node name="Menu" type="VBoxContainer" parent="."]
-margin_left = 382.523
-margin_top = 448.58
-margin_right = 850.523
-margin_bottom = 513.58
+margin_left = 363.441
+margin_top = 377.865
+margin_right = 831.441
+margin_bottom = 527.865
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CenterRow" type="HBoxContainer" parent="Menu"]
-margin_right = 468.0
-margin_bottom = 65.0
+margin_right = 467.0
+margin_bottom = 150.0
 size_flags_vertical = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Menu/CenterRow"]
-margin_right = 468.0
-margin_bottom = 65.0
+margin_right = 467.0
+margin_bottom = 150.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="StartGameButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 2 )]
-margin_right = 468.0
+margin_right = 467.0
 margin_bottom = 43.0
+rect_min_size = Vector2( 200, 43 )
 custom_fonts/font = ExtResource( 3 )
+scene_to_load = "res://src/Scenes/Dialogs/Dialogs.tscn"
+
+[node name="Controls" parent="Menu/CenterRow/Buttons" instance=ExtResource( 8 )]
+margin_top = 47.0
+margin_right = 467.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 150, 43 )
+scene_to_load = "res://src/Scenes/Menus/Controls.tscn"
+
+[node name="MenuButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]
+margin_top = 94.0
+margin_right = 467.0
+margin_bottom = 114.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/Scenes/Fonts/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://src/Scenes/Menus/Buttons/Return to titleScreen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/Scenes/Menus/GameOver.gd" type="Script" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -1.49829
+margin_right = 1020.5
+margin_bottom = 600.0
+color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -231.5
+margin_top = 141.0
+margin_right = 231.5
+margin_bottom = 282.0
+size_flags_horizontal = 0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Game Over"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -145.542
+margin_top = 49.9153
+margin_right = 232.458
+margin_bottom = 99.9153
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuButton" parent="Menu" instance=ExtResource( 2 )]

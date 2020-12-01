@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Scenes/Menus/Buttons/MenuButton.tscn" type="PackedScene" id=1]
+
+[node name="MenuButton" instance=ExtResource( 1 )]
+scene_to_load = "res://src/Scenes/Menus/Buttons/exitgame.tscn"
+
+[node name="Button" parent="." index="0"]
+text = "Exit
+"
