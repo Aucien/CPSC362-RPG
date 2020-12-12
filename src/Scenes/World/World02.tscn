@@ -227,11 +227,7 @@ collision_layer = 17
 collision_mask = 40
 
 [node name="Sprite" parent="Character/HeroKnight" index="0"]
-<<<<<<< Updated upstream
-frame = 1
-=======
-frame = 2
->>>>>>> Stashed changes
+frame = 0
 
 [node name="AnimationTree" parent="Character/HeroKnight" index="3"]
 parameters/playback = SubResource( 1 )
@@ -308,11 +304,9 @@ margin_top = 3.0
 margin_right = 1021.0
 margin_bottom = 53.0
 
-[node name="BossMusic" type="AudioStreamPlayer" parent="."]
+[node name="Dark Descent" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-volume_db = -7.0
+volume_db = -10.078
 autoplay = true
-mix_target = 1
-bus = "Boss"
 
 [editable path="Character/HeroKnight"]

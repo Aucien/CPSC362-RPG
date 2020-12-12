@@ -105,13 +105,10 @@ func _on_Hurtbox_area_entered(area):
 		state = TAKE_HIT
 		if GlobalSave.boss_health < 1:
 			state = DEATH
-<<<<<<< Updated upstream
-			
-=======
 
 func ending_screen():
 	get_tree().change_scene("res://src/Scenes/Menus/Win.tscn")
->>>>>>> Stashed changes
+
 
 func idle_state(delta):
 	velocity.x = 0
