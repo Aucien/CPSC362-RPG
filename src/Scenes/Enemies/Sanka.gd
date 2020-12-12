@@ -31,11 +31,14 @@ onready var playerDetectionZone = $PlayerDectection
 onready var animationPlayer = $AnimationPlayer
 onready var animationState = $AnimationTree.get("parameters/playback")
 
+signal health_updated(hp)
+
 var floatingText = preload("res://src/Scenes/Interface/floating_text.tscn")
 
 func _ready():
 	pick_random_state([IDLE,ROAM])
 	randomize() #to random the game's seed every time 
+	#GlobalSave.boss_health = 35
 	
 func _physics_process(delta):
 	velocity.y += GRAVITY	
@@ -93,15 +96,22 @@ func detectPlayer():
 
 func _on_Hurtbox_area_entered(area):
 	if area.name == "Hitbox":
-		hp -= area.MAX_DAMAGE
+		GlobalSave.boss_health -= area.MAX_DAMAGE
+		#emit_signal("health_updated", hp)
 		var text = floatingText.instance()
 		text.amount = area.MAX_DAMAGE
 		add_child(text)
 		knockback = area.knockback_vector * FRICTION
 		state = TAKE_HIT
-		if hp < 0:
+		if GlobalSave.boss_health < 1:
 			state = DEATH
+<<<<<<< Updated upstream
 			
+=======
+
+func ending_screen():
+	get_tree().change_scene("res://src/Scenes/Menus/Win.tscn")
+>>>>>>> Stashed changes
 
 func idle_state(delta):
 	velocity.x = 0

@@ -9,3 +9,6 @@ func _ready():
 func on_ButtonPressed(scene_to_load):
 	get_tree().change_scene(scene_to_load)
 
+func _process(delta):
+	if Input.is_action_just_pressed("left_mouse"):
+		$Click.play()

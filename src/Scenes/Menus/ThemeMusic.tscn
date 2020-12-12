@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Sounds/Trimmed-MainMenu-FairyonFire.wav" type="AudioStream" id=1]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+onready var music = $MainMusic
+
+"
+
+[node name="ThemeMusic" type="Node2D"]
+script = SubResource( 1 )
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.0

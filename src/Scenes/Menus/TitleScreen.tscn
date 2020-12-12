@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=1]
 [ext_resource path="res://src/Scenes/Menus/Buttons/StartGameButton.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/Scenes/Menus/Heros-Journey.png" type="Texture" id=7]
 [ext_resource path="res://src/Scenes/Menus/Buttons/Controls.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Scenes/Menus/Buttons/Exitbutton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Sounds/Menu Selection Click.wav" type="AudioStream" id=10]
 
 [node name="TitleScreen" type="Control"]
 margin_left = 48.4623
@@ -44,7 +45,10 @@ size_flags_vertical = 3
 margin_right = 467.0
 margin_bottom = 43.0
 rect_min_size = Vector2( 200, 43 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
 custom_fonts/font = ExtResource( 3 )
+enabled_focus_mode = 0
 scene_to_load = "res://src/Scenes/Dialogs/Dialogs.tscn"
 
 [node name="Controls" parent="Menu/CenterRow/Buttons" instance=ExtResource( 8 )]
@@ -52,6 +56,9 @@ margin_top = 47.0
 margin_right = 467.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 200, 43 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
 scene_to_load = "res://src/Scenes/Menus/Controls.tscn"
 
 [node name="MenuButton" parent="Menu/CenterRow/Buttons" instance=ExtResource( 9 )]
@@ -59,6 +66,9 @@ margin_top = 94.0
 margin_right = 467.0
 margin_bottom = 134.0
 rect_min_size = Vector2( 200, 40 )
+focus_mode = 0
+mouse_default_cursor_shape = 2
+enabled_focus_mode = 0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -80,15 +90,17 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Cloud" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 274.663, 360.337 )
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Cloud2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 800.05, 360.337 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Cloud2" type="Sprite" parent="ParallaxBackground"]
-position = Vector2( 800.05, 360.337 )
+[node name="Cloud" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 274.663, 360.337 )
 texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
@@ -116,3 +128,7 @@ texture = ExtResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = 5.0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/No Hope.wav-78cf9b31d085b672c812ae5c11c29b0c.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/No Hope.wav"
+dest_files=[ "res://.import/No Hope.wav-78cf9b31d085b672c812ae5c11c29b0c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

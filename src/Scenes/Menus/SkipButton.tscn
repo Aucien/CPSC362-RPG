@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Scenes/Dialogs/Skip Button.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sounds/Menu Selection Click.wav" type="AudioStream" id=2]
+
+[node name="SkipButton" type="Button"]
+margin_left = 963.108
+margin_top = 15.6421
+margin_right = 1001.11
+margin_bottom = 35.6421
+focus_mode = 1
+action_mode = 0
+enabled_focus_mode = 1
+text = "> Skip"
+flat = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+scene_to_load = "res://src/Scenes/Menus/LoadingEnemiesScreen.tscn"
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )

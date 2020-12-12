@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Page Turning Sfx.wav-a31b817e6784d9e953281fa005f4dab0.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Page Turning Sfx.wav"
+dest_files=[ "res://.import/Page Turning Sfx.wav-a31b817e6784d9e953281fa005f4dab0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

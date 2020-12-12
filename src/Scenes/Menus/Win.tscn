@@ -1,21 +1,37 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/Scenes/Menus/GameOver.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Map/stringstar fields/background_0.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Map/stringstar fields/background_2.png" type="Texture" id=3]
+[ext_resource path="res://src/Scenes/Menus/You-Win.png" type="Texture" id=4]
+[ext_resource path="res://src/Scenes/Menus/Win.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sounds/A Medieval Tale.wav" type="AudioStream" id=6]
 
 [node name="Control" instance=ExtResource( 1 )]
 margin_top = -1.49832
 margin_bottom = -1.49829
+script = ExtResource( 5 )
 
-[node name="Label" parent="." index="1"]
-margin_top = 176.0
-margin_bottom = 317.0
-custom_colors/font_color = Color( 0.113725, 1, 0, 1 )
-text = "You Won!"
+[node name="background_0" type="Sprite" parent="." index="1"]
+position = Vector2( 517.934, 305.345 )
+scale = Vector2( 3.68196, 3.56874 )
+texture = ExtResource( 2 )
 
-[node name="Menu" parent="." index="2"]
+[node name="background_2" type="Sprite" parent="." index="2"]
+position = Vector2( 521.052, 463.982 )
+scale = Vector2( 3.74073, 1.8513 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" parent="." index="3"]
+texture = ExtResource( 4 )
+
+[node name="Menu" parent="." index="6"]
 margin_left = -140.542
 margin_right = 237.458
 
-[node name="MenuButton" parent="Menu" index="0"]
-anchor_left = 0.0
-anchor_right = 0.0
+[node name="GameOver" parent="." index="8"]
+autoplay = false
+
+[node name="Winning" type="AudioStreamPlayer" parent="." index="9"]
+stream = ExtResource( 6 )
+autoplay = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/Scenes/World/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Map/Farground/sky.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://src/Scenes/World/World.gd" type="Script" id=11]
 [ext_resource path="res://src/Scenes/Enemies/Skeleton.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Scenes/Interface/CoinCounter.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Sounds/Ancient Fairy.wav" type="AudioStream" id=14]
 
 [node name="World" type="YSort"]
 position = Vector2( -1, -1 )
@@ -107,6 +108,13 @@ margin_right = 1015.9
 margin_bottom = 53.7798
 
 [node name="Exit" parent="." instance=ExtResource( 6 )]
-position = Vector2( 2801.16, 395.062 )
-next_world = "res://src/Scenes/World/World01.tscn"
+position = Vector2( 2805.59, 391.664 )
+next_world = "res://src/Scenes/Menus/LoadingEnemiesScreen.tscn"
+
+[node name="AnientFairy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -10.505
+pitch_scale = 0.9
+autoplay = true
+mix_target = 1
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_Exit_body_entered"]

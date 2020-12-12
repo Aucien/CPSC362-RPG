@@ -166,13 +166,22 @@ func _on_Hurtbox_area_entered(area):
 			knockback.x = 1.5 * FRICTION
 		if GlobalSave.player_hp < 0:
 			state = DEATH
+<<<<<<< Updated upstream
 			
+=======
+
+func game_over():
+	get_tree().change_scene("res://src/Scenes/Menus/GameOver.tscn")			
+
+>>>>>>> Stashed changes
 func _on_PickupZone_area_entered(area):
 	if area.name == "Coin":
+		$GetCoin.play()
 		#coin_on_hands += 1
 		GlobalSave.player_coin +=1
 		print("Coin on hands: ", GlobalSave.player_coin)
 		emit_signal("coin_updated", GlobalSave.player_coin)
+<<<<<<< Updated upstream
 	if area.name == "HealthPotion":
 		if (GlobalSave.player_hp < stats.MAX_HEALTH):
 			var MAX_HEALING = 2
@@ -184,3 +193,5 @@ func _on_PickupZone_area_entered(area):
 
 func end_game():
 	get_tree().change_scene("res://src/Scenes/Menus/GameOver.tscn")
+=======
+>>>>>>> Stashed changes
