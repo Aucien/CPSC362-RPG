@@ -533,7 +533,7 @@ radius = 21.4754
 height = 1000.0
 
 [sub_resource type="CircleShape2D" id=54]
-radius = 44.7078
+radius = 30.8585
 
 [sub_resource type="CapsuleShape2D" id=55]
 radius = 22.0
@@ -549,7 +549,7 @@ MAX_SPEED = 200
 scale = Vector2( 1.8, 1.9 )
 texture = ExtResource( 6 )
 hframes = 16
-frame = 8
+frame = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -12.5565, 21.744 )
@@ -600,8 +600,9 @@ collision_mask = 17
 MAX_DAMAGE = 8
 
 [node name="CollisionShape2D" parent="Boss_Hitbox" index="0"]
-position = Vector2( 24.3642, 1.27088 )
+position = Vector2( 41.2202, 20.1821 )
 shape = SubResource( 54 )
+disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
 collision_layer = 32
