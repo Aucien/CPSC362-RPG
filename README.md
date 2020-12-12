@@ -1,7 +1,8 @@
 # CPSC362-RPG
  A simple project to learn game dev for the Software engineering class in CSUF
-
-Assets Credits
+ 
+ Assets credits
+Credits:
 1.	Hero Knight: 	
 a.	Asset package: https://sventhole.itch.io/hero-knight
 b.	Contact: https://sventhole.artstation.com/ 
@@ -30,3 +31,32 @@ b.	Contact: https://oco.itch.io
 a.	Asset package: https://szadiart.itch.io/pixel-dark-forest
 b.	Contact: https://szadiart.itch.io 
 c.	Email: szadiart@onet.eu 
+8. STRINGSTAR FIELDS
+a. Asset package: https://trixelized.itch.io/starstring-fields 
+b. Contact: Trixie 
+c. Twitter: @Trixelized  
+8. Platformer Music Pack Lite
+a. Asset package: https://void1gaming.itch.io/platformer-music-pack-lite 
+b. Contact: VOiD1 Gaming
+c. Website: www.void1gaming.com/
+d. Twitter: @void1games
+9. Free Game Music Pack
+a. Asset package: https://invadableharmony.itch.io/free-game-music-pack 
+b. Contact: Invadable Harmony 
+c. Website: invadableharmony.com/ 
+d. Twitter: @Invadablharmony 
+10. Gems / Coins Free
+a. Asset package: https://laredgames.itch.io/gems-coins-free 
+b. Contact: La Red Games 
+c. Website: laredgames.comli.com 
+d. Twitter: @LaRedGames
+11. Fairy on Fire - Art Challenge by Tad Miller
+a. Asset package: https://opengameart.org/content/fairy-on-fire-art-challenge 
+b.Contact: https://opengameart.org/users/tad 
+12. Page Turning SFX Sound Effect by Nicole Marie T
+a. Asset package: https://opengameart.org/content/page-turning-sfx-sound-effect 
+13. Dark Descent by Matthew Pablo
+a. Asset Package: https://opengameart.org/content/dark-descent 
+b. Contact: https://matthewpablo.com/contact/ 
+14. Dialogue Design by Pola Eskandar
+a. Contact: billy.schoolofficial@gmail.com 
