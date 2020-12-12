@@ -56,6 +56,7 @@ func play_dialog():
 	if not dialog_dictionary:
 		if not DialogGlobal.next_index():
 			if DialogGlobal.dialog_index == DialogGlobal.dialogs_list.size() - 1:
+				DialogGlobal.dialog_index  = 0
 				scene_to_load = "res://src/Scenes/Menus/LoadingNewWorld.tscn"
 			else:
 				scene_to_load = DialogGlobal.next_scene
